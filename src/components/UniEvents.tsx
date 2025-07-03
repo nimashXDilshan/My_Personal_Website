@@ -6,7 +6,7 @@ import Im4 from '../../public/assets/projects/cse40-university-of-moratuwa/47608
 import Im5 from '../../public/assets/projects/hit-the-grounds-uom/470180308_1000245575455723_6366031204366054997_n.jpg';
 import Im6 from '../../public/assets/projects/hit-the-grounds-uom/470212962_998756992271248_2383605579274854578_n.jpg';
 import Im7 from '../../public/assets/projects/hit-the-grounds-uom/471421574_1007583331388614_1621733068095303035_n.jpg';
-import Im8 from '../../public/assets/projects/hit-the-grounds-uom/471421574_1007583331388614_1621733068095303035_n.jpg';
+import Im8 from '../../public/assets/projects/hit-the-grounds-uom/471305595_1007582941388653_1814511968119985857_n.jpg';
 
 
 const events = [
@@ -32,28 +32,28 @@ const events = [
 const Events = () => {
   return (
     <section id="uni-events" className="py-20 bg-slate-50">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-2">University Events</h2>
-          <p className="text-gray-600 text-lg">
+      <div className="container max-w-6xl px-4 mx-auto">
+        <div className="mb-12 text-center">
+          <h2 className="mb-2 text-4xl font-bold text-gray-800 md:text-5xl">University Events</h2>
+          <p className="text-lg text-gray-600">
             Explore our most exciting university moments and experiences.
           </p>
         </div>
 
         <div className="space-y-16">
           {events.map((event) => (
-            <div key={event.id} className="bg-white rounded-3xl shadow-xl p-8">
-              <h3 className="text-2xl font-bold text-blue-700 mb-2">{event.title}</h3>
-              <p className="text-sm text-gray-500 mb-4">{event.date}</p>
-              <p className="text-gray-700 mb-6">{event.description}</p>
+            <div key={event.id} className="p-8 bg-white shadow-xl rounded-3xl">
+              <h3 className="mb-2 text-2xl font-bold text-blue-700">{event.title}</h3>
+              <p className="mb-4 text-sm text-gray-500">{event.date}</p>
+              <p className="mb-6 text-gray-700">{event.description}</p>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                 {event.images.map((img, i) => (
                   <img
                     key={i}
                     src={img}
                     alt={`${event.title} - ${i + 1}`}
-                    className="w-full h-48 object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+                    className="object-cover w-full h-48 transition-transform duration-300 shadow-md rounded-xl hover:scale-105"
                   />
                 ))}
               </div>
