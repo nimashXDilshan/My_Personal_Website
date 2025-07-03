@@ -29,6 +29,16 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleDownload = () => {
+  const link = document.createElement('a');
+  link.href = '/Nimash_Dilshan_CV.pdf';
+  link.setAttribute('download', 'Nimash_Dilshan_CV.pdf');
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -143,14 +153,14 @@ const Header = () => {
             </button>
 
             {/* Download CV Button */}
-            <a
-  href="/assets/Nimash_Dilshan_CV.pdf"
-  download="Nimash_Dilshan_CV.pdf"
+            <button type="button" 
+  onClick={handleDownload}
   className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
 >
   <Download className="h-5 w-5" />
   <span>Download CV</span>
-</a>
+</button>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -242,14 +252,14 @@ const Header = () => {
                     )}
                   </button>
                   
-                  <a
-  href="/assets/Nimash_Dilshan_CV.pdf"
-  download="Nimash_Dilshan_CV.pdf"
+                  <button type="button" 
+  onClick={handleDownload}
   className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
 >
   <Download className="h-5 w-5" />
   <span>Download CV</span>
-</a>
+</button>
+
 
 
                 </div>

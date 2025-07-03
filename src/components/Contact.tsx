@@ -15,23 +15,36 @@ const Contact = () => {
     email: '',
     message: '',
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitted,setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-    setFormData({ name: '', email: '', message: '' });
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
+  try {
+    const response = await fetch('https://formspree.io/f/xeokdpjd', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
     });
-  };
+
+    if (response.ok) {
+       setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 3000);
+      setFormData({ name: '', email: '', message: '' });
+    } else {
+      alert('Something went wrong. Please try again.');
+    }
+  } catch (error) {
+    alert('Error sending message. Please check your connection.');
+  }
+};
+
+  
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-white to-slate-50">
