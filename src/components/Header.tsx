@@ -31,7 +31,7 @@ const Header = () => {
 
   const handleDownload = () => {
   const link = document.createElement('a');
-  link.href =  `${import.meta.env.BASE_URL}public/Nimash_Dilshan_CV.pdf`;
+  link.href =  `${import.meta.env.BASE_URL}Nimash_Dilshan_CV.pdf`;
   link.setAttribute('download', 'Nimash_Dilshan_CV.pdf');
   document.body.appendChild(link);
   link.click();
