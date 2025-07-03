@@ -161,7 +161,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      autoFocus
+
                       className="w-full px-4 py-3 rounded-xl bg-white border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                       placeholder="Enter your name"
                     />
