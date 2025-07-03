@@ -55,13 +55,14 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed w-full z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border-b border-gray-200/20 dark:border-gray-700/20'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="container px-4 py-4 mx-auto">
+  className={`fixed w-full z-50 transition-all duration-500 ${
+    isScrolled
+      ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg border-b border-gray-200/20 dark:border-gray-700/20'
+      : 'bg-blue-50 dark:bg-gray-800/90 backdrop-blur-none shadow-none border-b border-transparent'
+  }`}
+>
+
+      <div className="container px-2 py-2 mx-auto">
         <div className="flex items-center justify-between">
           {/* Enhanced Logo */}
           <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => scrollToSection('home')}>
