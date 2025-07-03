@@ -1,6 +1,8 @@
 import { ArrowDown, Github, Linkedin, Mail, Download, MapPin, ExternalLink } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import ProfilImg from '../../public/assets/470207013_1000932115387069_5402848326749275013_n.jpg'
+
+
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -13,7 +15,7 @@ const Hero = () => {
 
   const handleDownload = () => {
   const link = document.createElement('a');
-  link.href = '/Nimash_Dilshan_CV.pdf';
+  link.href =  `${import.meta.env.BASE_URL}public/assests/Nimash_Dilshan_CV.pdf`;
   link.setAttribute('download', 'Nimash_Dilshan_CV.pdf');
   document.body.appendChild(link);
   link.click();
@@ -29,7 +31,7 @@ const Hero = () => {
 
   return (
     
-    <section id="home" className="min-h-screen pt-20 items-center justify-center bg-gradient-to-br from-gray-200 to-gray-300">
+    <section id="home" className="items-center justify-center min-h-screen pt-20 bg-gradient-to-br from-gray-200 to-gray-300">
 
       {/* Modern Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"></div>
@@ -43,60 +45,60 @@ const Hero = () => {
       </div>
 
       {/* Modern Geometric Shapes */}
-      <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-blue-200/20 to-indigo-300/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-purple-200/20 to-pink-300/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div className="absolute w-64 h-64 rounded-full top-20 right-20 bg-gradient-to-br from-blue-200/20 to-indigo-300/20 blur-3xl animate-pulse"></div>
+      <div className="absolute delay-1000 rounded-full bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-purple-200/20 to-pink-300/20 blur-3xl animate-pulse"></div>
       
       {/* Floating Elements */}
-      <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-blue-400 rounded-full animate-bounce delay-500"></div>
-      <div className="absolute top-1/3 right-1/3 w-6 h-6 bg-indigo-400 rounded-full animate-bounce delay-700"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-3 h-3 bg-purple-400 rounded-full animate-bounce delay-300"></div>
+      <div className="absolute w-4 h-4 delay-500 bg-blue-400 rounded-full top-1/4 left-1/4 animate-bounce"></div>
+      <div className="absolute w-6 h-6 delay-700 bg-indigo-400 rounded-full top-1/3 right-1/3 animate-bounce"></div>
+      <div className="absolute w-3 h-3 delay-300 bg-purple-400 rounded-full bottom-1/4 right-1/4 animate-bounce"></div>
 
       <div className={`relative z-10 px-4 max-w-7xl mx-auto transition-all duration-1000 ${
         isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
       }`}>
         
         {/* Modern Split Layout */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-12">
+        <div className="grid items-center gap-16 mb-12 lg:grid-cols-2">
           {/* Left Column - Content */}
-          <div className="text-center lg:text-left space-y-6">
+          <div className="space-y-6 text-center lg:text-left">
             {/* Status Badge */}
-            {/* <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium border border-green-200">
-              <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+            {/* <div className="inline-flex items-center px-4 py-2 text-sm font-medium text-green-800 bg-green-100 border border-green-200 rounded-full">
+              <div className="w-2 h-2 mr-2 bg-green-500 rounded-full animate-pulse"></div>
               Available for new opportunities
             </div> */}
             
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              <h1 className="text-5xl font-bold leading-tight text-gray-900 lg:text-6xl">
                 Nimash Dilshan
-                <span className="block text-3xl lg:text-4xl font-medium text-gray-600 mt-2">
+                <span className="block mt-2 text-3xl font-medium text-gray-600 lg:text-4xl">
                   Manawadu   
                 </span>
                 
               </h1>
               
-              <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto lg:mx-0 rounded-full"></div>
+              <div className="w-20 h-1 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 lg:mx-0"></div>
             </div>
             
             <div className="space-y-3">
-              <p className="text-2xl lg:text-3xl font-semibold text-gray-800">
+              <p className="text-2xl font-semibold text-gray-800 lg:text-3xl">
                 Full Stack Developer
               </p>
               
-              <div className="flex items-center justify-center lg:justify-start text-gray-600 text-lg">
-                <MapPin className="h-5 w-5 mr-2 text-blue-500" />
+              <div className="flex items-center justify-center text-lg text-gray-600 lg:justify-start">
+                <MapPin className="w-5 h-5 mr-2 text-blue-500" />
                 <span>University of Moratuwa, Sri Lanka</span>
               </div>
             </div>
             
-            <p className="text-lg lg:text-xl text-gray-700 leading-relaxed max-w-2xl">
+            <p className="max-w-2xl text-lg leading-relaxed text-gray-700 lg:text-xl">
               Computer Science & Engineering student passionate about creating innovative web solutions. 
               Specialized in modern web technologies with a focus on user experience and performance optimization.
             </p>
 
             {/* Modern Skills Grid */}
             <div className="space-y-3">
-              <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">Technologies</h3>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+              <h3 className="text-sm font-semibold tracking-wider text-gray-500 uppercase">Technologies</h3>
+              <div className="flex flex-wrap justify-center gap-3 lg:justify-start">
                 {[
                   { name: 'React', color: 'bg-blue-100 text-blue-700 border-blue-200' },
                   { name: 'Node.js', color: 'bg-green-100 text-green-700 border-green-200' },
@@ -119,22 +121,22 @@ const Hero = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+            <div className="flex flex-col justify-center gap-4 pt-4 sm:flex-row lg:justify-start">
              <button type="button" 
   onClick={handleDownload}
-  className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
+  className="flex items-center justify-center gap-2 px-4 py-3 font-medium text-white transition-all duration-300 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
 >
-  <Download className="h-5 w-5" />
+  <Download className="w-5 h-5" />
   <span>Download CV</span>
 </button>
 
               
               <button
                 onClick={() => scrollToSection('projects')}
-                className="group px-8 py-4 bg-white text-gray-800 rounded-xl font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border border-gray-200 flex items-center justify-center gap-2"
+                className="flex items-center justify-center gap-2 px-8 py-4 font-semibold text-gray-800 transition-all duration-300 transform bg-white border border-gray-200 shadow-lg group rounded-xl hover:bg-gray-50 hover:scale-105 hover:shadow-xl"
               >
                 View My Work
-                <ExternalLink className="h-4 w-4 group-hover:rotate-45 transition-transform" />
+                <ExternalLink className="w-4 h-4 transition-transform group-hover:rotate-45" />
               </button>
             </div>
           </div>
@@ -143,8 +145,8 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative group">
               {/* Background Decorative Elements */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-3xl blur-xl opacity-20 group-hover:opacity-30 transition-opacity"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform"></div>
+              <div className="absolute transition-opacity -inset-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-3xl blur-xl opacity-20 group-hover:opacity-30"></div>
+              <div className="absolute inset-0 transition-transform transform bg-gradient-to-br from-blue-100 to-indigo-100 rounded-3xl rotate-3 group-hover:rotate-6"></div>
               
               {/* Profile Image */}
               <div className="relative">
@@ -155,17 +157,17 @@ const Hero = () => {
                 />
                 
                 {/* Overlay Card */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border border-gray-100 group-hover:scale-105 transition-transform duration-500">
+                <div className="absolute p-6 transition-transform duration-500 bg-white border border-gray-100 shadow-xl -bottom-6 -left-6 rounded-2xl group-hover:scale-105">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-xl">N</span>
+                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600">
+                      <span className="text-xl font-bold text-white">N</span>
                     </div>
                     <div
   onClick={() => {
     const section = document.getElementById('contact');
     if (section) section.scrollIntoView({ behavior: 'smooth' });
   }}
-  className="cursor-pointer hover:bg-gray-100 p-2 rounded-lg transition"
+  className="p-2 transition rounded-lg cursor-pointer hover:bg-gray-100"
 >
   <p className="font-semibold text-gray-800">Let's Connect</p>
   <p className="text-sm text-gray-600">Open to opportunities</p>
@@ -179,33 +181,33 @@ const Hero = () => {
         </div>
         
         {/* Modern Social Links */}
-        <div className="flex justify-center items-center space-x-6 mb-12">
-          <span className="text-gray-500 font-medium">Connect with me</span>
+        <div className="flex items-center justify-center mb-12 space-x-6">
+          <span className="font-medium text-gray-500">Connect with me</span>
           <div className="flex space-x-4">
             <a
               href="https://github.com/nimashXDilshan"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-4 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 border border-gray-200 hover:border-gray-300"
+              className="p-4 transition-all duration-300 bg-white border border-gray-200 rounded-full shadow-md group hover:shadow-lg hover:scale-110 hover:border-gray-300"
               aria-label="GitHub Profile"
             >
-              <Github className="h-5 w-5 text-gray-700 group-hover:text-gray-900" />
+              <Github className="w-5 h-5 text-gray-700 group-hover:text-gray-900" />
             </a>
             <a
               href="https://www.linkedin.com/in/nimash-dilshan-36b973305/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-4 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 border border-gray-200 hover:border-blue-300"
+              className="p-4 transition-all duration-300 bg-white border border-gray-200 rounded-full shadow-md group hover:shadow-lg hover:scale-110 hover:border-blue-300"
               aria-label="LinkedIn Profile"
             >
-              <Linkedin className="h-5 w-5 text-blue-600 group-hover:text-blue-700" />
+              <Linkedin className="w-5 h-5 text-blue-600 group-hover:text-blue-700" />
             </a>
             <a
               href="mailto:nimash.22@cse.mrt.ac.lk"
-              className="group p-4 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:scale-110 border border-gray-200 hover:border-gray-300"
+              className="p-4 transition-all duration-300 bg-white border border-gray-200 rounded-full shadow-md group hover:shadow-lg hover:scale-110 hover:border-gray-300"
               aria-label="Email Contact"
             >
-              <Mail className="h-5 w-5 text-gray-700 group-hover:text-gray-900" />
+              <Mail className="w-5 h-5 text-gray-700 group-hover:text-gray-900" />
             </a>
           </div>
         </div>
@@ -214,10 +216,10 @@ const Hero = () => {
         <div className="text-center">
           <button
             onClick={() => scrollToSection('contact')}
-            className="inline-flex items-center px-6 py-3 text-gray-600 hover:text-gray-800 transition-colors duration-300 font-medium"
+            className="inline-flex items-center px-6 py-3 font-medium text-gray-600 transition-colors duration-300 hover:text-gray-800"
           >
             <span>Get in touch</span>
-            <ArrowDown className="ml-2 h-4 w-4 animate-bounce" />
+            <ArrowDown className="w-4 h-4 ml-2 animate-bounce" />
           </button>
         </div>
       </div>
@@ -225,11 +227,11 @@ const Hero = () => {
       {/* Modern Scroll Indicator */}
       <button
         onClick={() => scrollToSection('about')}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 group"
+        className="absolute transform -translate-x-1/2 bottom-8 left-1/2 group"
         aria-label="Scroll to next section"
       >
-        <div className="p-3 rounded-full bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-110 border border-gray-200">
-          <ArrowDown className="h-5 w-5 text-gray-600 group-hover:text-gray-800 animate-bounce" />
+        <div className="p-3 transition-all duration-300 border border-gray-200 rounded-full shadow-lg bg-white/80 backdrop-blur-sm hover:shadow-xl group-hover:scale-110">
+          <ArrowDown className="w-5 h-5 text-gray-600 group-hover:text-gray-800 animate-bounce" />
         </div>
       </button>
     </section>

@@ -31,7 +31,7 @@ const Header = () => {
 
   const handleDownload = () => {
   const link = document.createElement('a');
-  link.href = '/Nimash_Dilshan_CV.pdf';
+  link.href =  `${import.meta.env.BASE_URL}public/assests/Nimash_Dilshan_CV.pdf`;
   link.setAttribute('download', 'Nimash_Dilshan_CV.pdf');
   document.body.appendChild(link);
   link.click();
@@ -61,28 +61,28 @@ const Header = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container px-4 py-4 mx-auto">
         <div className="flex items-center justify-between">
           {/* Enhanced Logo */}
-          <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => scrollToSection('home')}>
+          <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => scrollToSection('home')}>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
-              <div className="relative bg-gradient-to-r from-blue-500 to-indigo-600 p-2 rounded-lg">
-                <Code2 className="h-6 w-6 text-white" />
+              <div className="absolute inset-0 transition-opacity rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600 blur opacity-20 group-hover:opacity-40"></div>
+              <div className="relative p-2 rounded-lg bg-gradient-to-r from-blue-500 to-indigo-600">
+                <Code2 className="w-6 h-6 text-white" />
               </div>
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-gray-800 dark:text-gray-400 group-hover:text-blue-600 transition-colors">
+              <span className="text-xl font-bold text-gray-800 transition-colors dark:text-gray-400 group-hover:text-blue-600">
                 Nimash Dilshan
               </span>
-              <span className="text-xs text-gray-500 dark:text-gray-400 -mt-1">
+              <span className="-mt-1 text-xs text-gray-500 dark:text-gray-400">
                 Full Stack Developer
               </span>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1 ">
+          <nav className="items-center hidden space-x-1 lg:flex ">
             {[
               { label: 'Home', id: 'home' },
               { label: 'About', id: 'about' },
@@ -102,62 +102,62 @@ const Header = () => {
               >
                 {item.label}
                 {currentSection === item.id && (
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-blue-600 rounded-full"></div>
+                  <div className="absolute bottom-0 w-1 h-1 transform -translate-x-1/2 bg-blue-600 rounded-full left-1/2"></div>
                 )}
               </button>
             ))}
           </nav>
 
           {/* Action Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="items-center hidden space-x-3 md:flex">
             {/* Social Links */}
             <div className="flex items-center space-x-2">
               <a
                 href="https://github.com/nimashXDilshan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                className="p-2 transition-colors duration-200 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
                 aria-label="GitHub"
               >
-                <Github className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                <Github className="w-4 h-4 text-gray-600 dark:text-gray-400" />
               </a>
               <a
                 href="https://www.linkedin.com/in/nimash-dilshan-36b973305/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                className="p-2 transition-colors duration-200 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                <Linkedin className="w-4 h-4 text-blue-600 dark:text-blue-400" />
               </a>
               <a
                 href="mailto:nimash.22@cse.mrt.ac.lk"
-                className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                className="p-2 transition-colors duration-200 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
                 aria-label="Email"
               >
-                <Mail className="h-4 w-4 text-gray-600 dark:text-gray-400" />
+                <Mail className="w-4 h-4 text-gray-600 dark:text-gray-400" />
               </a>
             </div>
 
             {/* Dark Mode Toggle */}
             <button
               onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300"
+              className="p-2 transition-all duration-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
               aria-label="Toggle dark mode"
             >
               {isDarkMode ? (
-                <Sun className="h-5 w-5 text-yellow-500" />
+                <Sun className="w-5 h-5 text-yellow-500" />
               ) : (
-                <Moon className="h-5 w-5 text-gray-600" />
+                <Moon className="w-5 h-5 text-gray-600" />
               )}
             </button>
 
             {/* Download CV Button */}
             <button type="button" 
   onClick={handleDownload}
-  className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
+  className="flex items-center justify-center gap-2 px-4 py-3 font-medium text-white transition-all duration-300 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
 >
-  <Download className="h-5 w-5" />
+  <Download className="w-5 h-5" />
   <span>Download CV</span>
 </button>
 
@@ -166,20 +166,20 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+            className="p-2 transition-colors duration-200 rounded-lg md:hidden hover:bg-gray-100 dark:hover:bg-gray-800"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+              <X className="w-6 h-6 text-gray-700 dark:text-gray-300" />
             ) : (
-              <Menu className="h-6 w-6 text-gray-700 dark:text-gray-300" />
+              <Menu className="w-6 h-6 text-gray-700 dark:text-gray-300" />
             )}
           </button>
         </div>
 
         {/* Enhanced Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden mt-4 py-4 border-t border-gray-200/20 dark:border-gray-700/20">
+          <nav className="py-4 mt-4 border-t md:hidden border-gray-200/20 dark:border-gray-700/20">
             <div className="flex flex-col space-y-2">
               {[
                 { label: 'Home', id: 'home' },
@@ -203,33 +203,33 @@ const Header = () => {
               ))}
               
               {/* Mobile Actions */}
-              <div className="pt-4 border-t border-gray-200/20 dark:border-gray-700/20 space-y-3">
+              <div className="pt-4 space-y-3 border-t border-gray-200/20 dark:border-gray-700/20">
                 {/* Social Links */}
                 <div className="flex items-center justify-center space-x-4">
                   <a
                     href="https://github.com/nimashXDilshan"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+                    className="p-3 transition-colors duration-200 bg-gray-100 rounded-full dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
                     aria-label="GitHub"
                   >
-                    <Github className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                    <Github className="w-5 h-5 text-gray-600 dark:text-gray-400" />
                   </a>
                   <a
                     href="https://www.linkedin.com/in/nimash-dilshan-36b973305/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+                    className="p-3 transition-colors duration-200 bg-gray-100 rounded-full dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                    <Linkedin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   </a>
                   <a
                     href="mailto:nimash.22@cse.mrt.ac.lk"
-                    className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+                    className="p-3 transition-colors duration-200 bg-gray-100 rounded-full dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
                     aria-label="Email"
                   >
-                    <Mail className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                    <Mail className="w-5 h-5 text-gray-600 dark:text-gray-400" />
                   </a>
                 </div>
 
@@ -237,16 +237,16 @@ const Header = () => {
                 <div className="flex flex-col space-y-2">
                   <button
                     onClick={toggleDarkMode}
-                    className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+                    className="flex items-center justify-center gap-2 px-4 py-3 transition-colors duration-200 bg-gray-100 rounded-lg dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700"
                   >
                     {isDarkMode ? (
                       <>
-                        <Sun className="h-5 w-5 text-yellow-500" />
+                        <Sun className="w-5 h-5 text-yellow-500" />
                         <span className="text-gray-700 dark:text-gray-300">Light Mode</span>
                       </>
                     ) : (
                       <>
-                        <Moon className="h-5 w-5 text-gray-600" />
+                        <Moon className="w-5 h-5 text-gray-600" />
                         <span className="text-gray-700 dark:text-gray-300">Dark Mode</span>
                       </>
                     )}
@@ -254,9 +254,9 @@ const Header = () => {
                   
                   <button type="button" 
   onClick={handleDownload}
-  className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg font-medium hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
+  className="flex items-center justify-center gap-2 px-4 py-3 font-medium text-white transition-all duration-300 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700"
 >
-  <Download className="h-5 w-5" />
+  <Download className="w-5 h-5" />
   <span>Download CV</span>
 </button>
 
